@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css" integrity="sha512-KVdV5HNnN1f6YOANbRuNxyCnqyPICKUmQusEkyeRg4X0p8K1xCdbHs32aA7pWo6WqMZk0wAzl29cItZh8oBPYQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css"
+        integrity="sha512-KVdV5HNnN1f6YOANbRuNxyCnqyPICKUmQusEkyeRg4X0p8K1xCdbHs32aA7pWo6WqMZk0wAzl29cItZh8oBPYQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/brands.min.css" integrity="sha512-BglNUJaVmT9HacZ2AsbVQxjswBmIf3AJj9hhXr/Yre33qU+A1p8gXUcavzcHYkWf5bIvLMIiEbdMrEVqb5h2Rg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/brands.min.css"
+        integrity="sha512-BglNUJaVmT9HacZ2AsbVQxjswBmIf3AJj9hhXr/Yre33qU+A1p8gXUcavzcHYkWf5bIvLMIiEbdMrEVqb5h2Rg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/solid.min.css" integrity="sha512-LUxUs00S05YspUb2HCuUTBqTqbjJm2uNvwRXVTcl/jkr9ygYZptXhfknc52iBnPUNgHHHC9ivU4RV6UFxLxhfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/solid.min.css"
+        integrity="sha512-LUxUs00S05YspUb2HCuUTBqTqbjJm2uNvwRXVTcl/jkr9ygYZptXhfknc52iBnPUNgHHHC9ivU4RV6UFxLxhfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@900&display=swap"
+        rel="stylesheet">
 
     <title>Recipes</title>
 
@@ -62,37 +71,43 @@
             --spacing-gutter-large: 4rem;
         }
 
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
 
-        html{
+        html {
             font-size: 62.5%%
         }
 
-        body{
+        body {
             font-size: 1.6rem;
             font-family: var(--font-primary);
             background: var(--color-gray-1);
+            color: var(--color-dark-text);
         }
 
-        h1,h2,h3,h4,h5,h6{
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-headings);
         }
 
-        .container{
+        .container {
             padding: var(--spacing-gutter-medium);
-            max-width: 80rem;
+            max-width: 90rem;
             margin: 0 auto;
         }
 
-        .main-header-container{
+        .main-header-container {
             background: var(--color-primary-dark);
         }
 
-        .main-logo{
+        .main-logo {
             font-size: 3rem;
             color: var(--color-white);
             text-decoration: none;
@@ -104,10 +119,11 @@
             margin: 0 auto;
         }
 
-        .main-logo-icon{
+        .main-logo-icon {
             margin-right: 1rem;
         }
-        .search-form{
+
+        .search-form {
             position: relative;
             border: 0.2rem solid var(--color-primary-dark);
             max-width: 54rem;
@@ -117,7 +133,7 @@
         }
 
         .search-button,
-        .search-input{
+        .search-input {
             border: none;
             background: none;
             outline: none;
@@ -125,32 +141,127 @@
             border-radius: 0.4rem;
         }
 
-        .search-input{
+        .search-input {
             width: 100%;
             padding-right: 3rem;
         }
 
-        .search-button{
+        .search-button {
             font-size: 1.2rem;
             position: absolute;
             top: -0.2rem;
             right: 0;
         }
 
-        .search-button:focus{
+        .search-button:focus {
             outline: 0.1rem solid var(--color-primary);
             background: rgba(0, 0, 0, 0.1);
         }
 
-        .search-form:focus-within{
+        .search-form:focus-within {
             border-color: var(--color-primary);
             background: var(--color-white);
         }
 
-        .search-form:focus-within .search-button{
+        .search-form:focus-within .search-button {
             color: var(--color-primary);
         }
 
+        .main-content {
+            padding-top: 0;
+        }
+
+        .main-content-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: var(--spacing-gutter-large);
+        }
+
+        .recipe {
+            background: var(--color-white);
+            box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: all 300ms ease-in-out;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+
+        .recipe img {
+            width: 100%;
+        }
+
+        .recipe-list-item {
+            max-width: 50rem;
+        }
+
+        .recipe-list-item:hover {
+            transform: scale(1.01);
+            box-shadow: -0.8rem 0.8rem 1.5rem rgba(0, 0, 0, 0.4);
+        }
+
+        .recipe-title-container {
+            padding: var(--spacing-gutter-medium);
+            padding-bottom: 2rem;
+        }
+
+        .recipe-author {
+            padding: 0 var(--spacing-gutter-medium);
+        }
+
+        .recipe-content {
+            padding: var(--spacing-gutter-medium);
+            padding-top: 2rem;
+        }
+
+        .recipe-author-item {
+            color: var(--color-gray-4);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-author-item a {
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: all 300ms ease-in-out;
+        }
+
+        .recipe-author-item a:hover {
+            color: var(--color-gray-8);
+        }
+
+        .recipe-meta-container {
+            display: flex;
+            flex-flow: row wrap;
+            padding: var(--spacing-gutter-medium);
+            background: var(--color-gray-1);
+        }
+
+        .recipe-meta {
+            display: flex;
+            flex-flow: column nowrap;
+            flex-shrink: 1;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .recipe-meta-title {
+            font-size: 1.6rem;
+        }
+
+        .recipe-footer a {
+            background: var(--color-primary-dark);
+            display: block;
+            color: var(--color-white);
+            text-decoration: none;
+            text-align: center;
+            padding: 1.5rem var(--spacing-gutter-medium);
+            transition: all 300ms ease-in-out;
+        }
+
+        .recipe-footer a:hover {
+            filter: brightness(2);
+        }
     </style>
 
 </head>
