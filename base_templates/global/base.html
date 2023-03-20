@@ -5,9 +5,8 @@
     {% include 'recipes/partials/search-container.html' %}
 
     <main class="main-content-container">
-        <div class="main-content main-content-detail container">
-            {% include 'recipes/partials/recipe.html' %}
-        </div>
+        <div class="main-content container main-content-list">
+            {% block content %} {% endblock content %}
     </main>
     {% include 'recipes/partials/footer.html' %}
 </body>
