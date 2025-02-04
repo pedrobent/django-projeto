@@ -20,7 +20,7 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
-    cover = models.ImageField(upload_to='recipe/cover/%y/%m/%d/')
+    cover = models.ImageField(upload_to='recipes/cover/%y/%m/%d/')
     Category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True
     )
