@@ -28,7 +28,7 @@
             {{recipe.created_at|date:'d/m/Y'}} às {{recipe.created_at|date:'H:i:s'}}
         </span>
         <span class="recipe-author-item">
-            <a href="{% url "recipe:category" recipe.category.id %}">
+            <a href="{% url 'recipes:category' recipe.category.id %}">
                 <i class="fa-solid fa-utensils"></i>
                 <span>{{recipe.category.name}}</span>
             </a>
