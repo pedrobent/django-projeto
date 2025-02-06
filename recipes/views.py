@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from utils.recipes.factory import make_recipe
-from .models import Recipe
+from recipes.models import Recipe
 
 
 def home(request):
