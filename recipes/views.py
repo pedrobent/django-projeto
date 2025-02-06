@@ -17,9 +17,13 @@ def category(request, category_id):
         category__id = category_id,
         is_published = True
         ).order_by('-id')
+    
+    if not recipes:
+        return HttpResponse(content='Not found', status = 404)
+
     return render(request, 'recipes/pages/category.html', context={
         'recipes': recipes,
-        'title': f'{recipes.first()category.name}'
+        'title': f'{recipes.first().category.name} - Category |',
     })
 
 def recipe(request, id):
