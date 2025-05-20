@@ -6,6 +6,12 @@
 <div class="main-content container main-content-list">
     {% for recipe in recipes %}
         {% include 'recipes/partials/recipe.html' %}
+
+    {%empty%}
+        <div>
+            <h1>Não Há Receitas com essa categoria</h1>
+        </div>
+        
     {% endfor %}
 </div>
 {% endblock content %}

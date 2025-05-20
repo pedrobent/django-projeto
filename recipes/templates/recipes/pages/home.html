@@ -2,10 +2,18 @@
 
 {% block title %}Home |{% endblock title %}
 
+{% include 'global/partials/messages.html' %}
+
 {% block content %}
 <div class="main-content container main-content-list">
     {% for recipe in recipes %}
         {% include 'recipes/partials/recipe.html' %}
+
+    {%empty%}
+        <div>
+            <h1>No recipes found here 🥲!</h1>
+        </div>
+        
     {% endfor %}
 </div>
 {% endblock content %}
