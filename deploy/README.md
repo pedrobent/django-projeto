@@ -121,7 +121,7 @@ cd ~
 No seu computador local, adicione o bare como remoto:
 
 ```
-git remote add app_bare pedro@34.55.43.181server:~/app_bare
+git remote add app_bare 34.55.43.181server:~/app_bare
 git push app_bare <branch>
 ```
 
