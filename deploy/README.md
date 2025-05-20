@@ -121,7 +121,7 @@ cd ~
 No seu computador local, adicione o bare como remoto:
 
 ```
-git remote add app_bare 34.55.43.181server:~/app_bare
+git remote add app_bare 34.55.43.181:~/app_bare
 git push app_bare <branch>
 ```
 
@@ -137,7 +137,7 @@ git pull origin <branch>
 ```
 cd  ~/app_repo
 git pull origin <branch>
-python3.9 -m venv venv
+python3.12 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
 pip install psycopg2
