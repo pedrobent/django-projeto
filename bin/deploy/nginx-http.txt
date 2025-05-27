@@ -1,11 +1,11 @@
 # https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
 #
 # REPLACES
-# ____REPLACE_ME_WITH_YOUR_OWN_DOMAIN____ = Replace with your domain
-# __PROJECT_FOLDER__ = Replace with the path to the folder for the project
-# __STATIC_FOLDER_PATH__ = Replace with the path to the folder for static files
-# __MEDIA_FOLDER_PATH__ = Replace with the path to the folder for media files
-# __SOCKET_NAME__ = Replace with your unix socket name
+# 34.55.43.181 = Replace with your domain
+# /home/pedro/app_repo = Replace with the path to the folder for the project
+# /home/pedro/app_repo/static = Replace with the path to the folder for static files
+# /home/pedro/app_repo/media = Replace with the path to the folder for media files
+# djangoproject.socket = Replace with your unix socket name
 # 
 # Set timezone
 # List - timedatectl list-timezones
@@ -15,26 +15,26 @@
 server {
   listen 80;
   listen [::]:80;
-  server_name ____REPLACE_ME_WITH_YOUR_OWN_DOMAIN____;
+  server_name 34.55.43.181;
 
   # Add index.php to the list if you are using PHP
   index index.html index.htm index.nginx-debian.html index.php;
   
-  # ATTENTION: __STATIC_FOLDER_PATH__
+  # ATTENTION: /home/pedro/app_repo/static
   location /static {
     autoindex on;
-    alias __STATIC_FOLDER_PATH__;
+    alias /home/pedro/app_repo/static;
   }
 
-  # ATTENTION: __MEDIA_FOLDER_PATH__ 
+  # ATTENTION: /home/pedro/app_repo/media 
   location /media {
     autoindex on;
-    alias __MEDIA_FOLDER_PATH__;
+    alias /home/pedro/app_repo/media;
   }
 
-  # ATTENTION: __SOCKET_NAME__
+  # ATTENTION: djangoproject.socket
   location / {
-    proxy_pass http://unix:/run/__SOCKET_NAME__;
+    proxy_pass http://unix:/run/djangoproject.socket;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
@@ -76,6 +76,6 @@ server {
     image/svg+xml;
 
   access_log off;
-  #access_log  /var/log/nginx/____REPLACE_ME_WITH_YOUR_OWN_DOMAIN____-access.log;
-  error_log   /var/log/nginx/____REPLACE_ME_WITH_YOUR_OWN_DOMAIN____-error.log;
+  #access_log  /var/log/nginx/34.55.43.181-access.log;
+  error_log   /var/log/nginx/34.55.43.181-error.log;
 }
