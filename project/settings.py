@@ -43,10 +43,12 @@ INSTALLED_APPS = [
     # A gente tem apps também
     'recipes',
     'authors',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -148,3 +150,8 @@ MESSAGE_TAGS = {
     constants.SUCCESS: 'message-success',
     constants.WARNING: 'message-warning',
 }
+
+# Django Debug Toolbar
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
