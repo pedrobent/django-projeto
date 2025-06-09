@@ -171,7 +171,8 @@
     left: 150px;
     width: 200px;
     text-align: left;
-    color: black;
+    text-shadow: 0 0 20px black;
+    color: white;
     transform: translate(0, -50%);
     display: none;
 }
