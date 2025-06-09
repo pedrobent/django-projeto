@@ -1,0 +1,34 @@
+{% load static %}
+<section id="intro" class="section image-bg">
+    <style>
+    .image-bg{
+    background: var(--white-color);
+    background-image: url('static/global/img/capa.jpeg');
+    background-position: center top;
+    background-size: cover;
+    color: var(--primary-color);
+}
+    </style>
+        <div class=" intro-content">
+            <div class="intro-text">
+                <h2>PEDRO BENTO</h2>
+                <h6 class="msg">Desenvolvedor Backend</h6>
+            </div>
+            <div>
+                <a href="https://github.com/pedrobent" target="_blank">
+                    <div class="intro-img"><img class="button-github" src="{% static 'global/img/25231.png' %}" alt="icone github">
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/pedro-bento-05928a201/" target="_blank">
+                    <div class="intro-img"><img class="button-linkdin" src="{% static 'global/img/linkedin (2).png' %}"
+                            alt="icone linkdin"></div>
+                </a>
+
+                <a href="https://wa.me/qr/BSRO7X37X7RCM1" target="_blank">
+                    <div class="intro-img"><img class="button-whatsapp" src="{% static 'global/img/transferir.png' %}"
+                            alt="Icone whatsapp">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>

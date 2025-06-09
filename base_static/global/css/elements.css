@@ -1,0 +1,125 @@
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+/*textos*/
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Montserrat", serif;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1 h2 h3 h4 h5 h6{
+    font-family: "Montserrat", serif;
+}
+
+h1{
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 6rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h3{
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+h4{
+    font-size: 4.5rem;
+}
+
+h5{
+    font-size: 4rem;
+}
+
+h6{
+    font-size: 3.5rem;
+}
+
+p{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.responsive-table{
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+table{
+    max-width: 120rem;
+    min-width: 36rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-size: 1.6rem;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table td, table th{
+    white-space: nowrap;
+    padding: 1rem;
+    border: 0.1rem solid var(--light-gray-color);
+    text-align: left;
+}
+
+table th, tfoot td{
+    background: var(--light-gray-color);
+}
+
+.msg{
+    border-right: 8px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: 0;
+
+    animation: mark 0.5s step-end infinite, write 6s steps(22, end) infinite;
+
+}
+
+@keyframes mark{
+    50%{
+        border-right-color: transparent;
+    }
+}
+
+@keyframes write{
+    20%{
+        width: 46rem;
+    }
+
+    70%{
+        width: 46rem;
+    }
+
+    85%{
+        width: 0;
+    }
+
+    100%{
+        width: 0;
+    }
+}
