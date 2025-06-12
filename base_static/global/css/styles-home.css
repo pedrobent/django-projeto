@@ -37,6 +37,7 @@
 }
 
 .presentation{
+    padding: 10rem;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
