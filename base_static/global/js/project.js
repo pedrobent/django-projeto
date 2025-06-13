@@ -7,6 +7,6 @@ next.addEventListener('click', function(){
 })
 
 prev.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
+    let items = document.querySelectorAll('.item-project')
     document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
 })
