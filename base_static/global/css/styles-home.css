@@ -8,6 +8,7 @@
     
 }
 .intro-text{
+    color: aliceblue;
     justify-self: start;
 }
 
@@ -117,7 +118,7 @@
     }
 
     .msg{
-        border-right: 8px solid black;
+        border-right: 8px solid aliceblue;
         white-space: nowrap;
         overflow: hidden;
     
