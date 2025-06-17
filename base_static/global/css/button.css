@@ -51,7 +51,7 @@
 
 .transition-text{
     display: grid;
-    grid-template-row: repeat(50px);
+    grid-template-rows: repeat(50px);
     justify-items: center;
 }
 

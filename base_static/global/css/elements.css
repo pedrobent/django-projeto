@@ -90,7 +90,7 @@ table th, tfoot td{
 }
 
 .msg{
-    border-right: 8px solid black;
+    border-right: 8px solid aliceblue;
     white-space: nowrap;
     overflow: hidden;
 
