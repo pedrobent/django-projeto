@@ -49,7 +49,7 @@ class Recipe(models.Model):
         User, on_delete=models.SET_NULL, null=True, blank=True, default= None,
     )
 
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True, default='')
 
     def __str__(self):
         return self.title
