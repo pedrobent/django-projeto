@@ -10,3 +10,14 @@ def home(request, *args, **kwargs):
         'home/home.html',
         context=context
     )
+
+def whatsapp(request, *args, **kwargs):
+    context = {
+        'whatsapp': whatsapp,
+    }
+
+    return render(
+        request,
+        'home/n8n.html',
+        context=context
+    )

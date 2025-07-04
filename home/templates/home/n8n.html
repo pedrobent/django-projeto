@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp | Assistente</title>
+    <link rel="stylesheet" href="{% static 'global/css/whatsapp-n8n.css' %}">
+</head>
+<body>
+    <section>
+        <div class="background-section">
+            <video class= "video-fundo" src="{% static 'global/video/fundo-whatsapp.mp4' %}" autoplay loop muted></video>
+        </div>
+        <div class="box">
+            <div class="conteudo bac">
+                <img src="{% static 'global/img/logo-n8n.png' %}" alt="Whatsapp">
+                <p>Esse agente de IA é um assistente pessoal onde você pode tirar duvidas e 
+                fazer com que ele lembre você de seus compromissos.</p>
+            </div>
+            <div class="conteudo">
+                <video class="video-whats" src="{% static 'global/video/video-whatsapp.mp4' %}" autoplay loop muted></video>
+                <a href="https://wa.me/5511946613897"><button class= "button-whats">Teste no Whatsapp</button></a>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

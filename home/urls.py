@@ -10,4 +10,10 @@ urlpatterns = [
         views.home,
         name="home"
     ),
+
+    path(
+        'whatsapp',
+        views.whatsapp,
+        name="whatsapp"
+    ),
 ]
