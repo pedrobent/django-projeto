@@ -56,7 +56,18 @@
     
     .intro-content, .grid{
         grid-template-columns: 1fr;
+        grid-template-areas: 
+        'img'
+        'text';
         width: 100%;
+    }
+
+    .intro-text{
+        grid-area: text;
+    }
+
+    .img-intro{
+        grid-area: img;
     }
 
     .grid-one-content{
