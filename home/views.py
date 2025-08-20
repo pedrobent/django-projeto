@@ -7,7 +7,7 @@ def home(request, *args, **kwargs):
 
     return render(
         request,
-        'home/home.html',
+        'home/index.html',
         context=context
     )
 
