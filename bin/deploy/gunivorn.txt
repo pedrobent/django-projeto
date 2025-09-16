@@ -1,13 +1,13 @@
 ###############################################################################
 # Replace
-# djangoproject to the name of the gunicorn file you want
+# portifolio to the name of the gunicorn file you want
 # pedro to your user name
 # app_repo to the folder name of your project
 # project to the folder name where you find a file called wsgi.py
 #
 ###############################################################################
-# Criando o arquivo djangoproject.socket
-sudo nano /etc/systemd/system/djangoproject.socket
+# Criando o arquivo portifolio.socket
+sudo nano /etc/systemd/system/portifolio.socket
 
 ###############################################################################
 # Conteúdo do arquivo
@@ -15,20 +15,20 @@ sudo nano /etc/systemd/system/djangoproject.socket
 Description=gunicorn blog socket
 
 [Socket]
-ListenStream=/run/djangoproject.socket
+ListenStream=/run/portifolio.socket
 
 [Install]
 WantedBy=sockets.target
 
 ###############################################################################
-# Criando o arquivo djangoproject.service
-sudo nano /etc/systemd/system/djangoproject.service
+# Criando o arquivo portifolio.service
+sudo nano /etc/systemd/system/portifolio.service
 
 ###############################################################################
 # Conteúdo do arquivo
 [Unit]
 Description=Gunicorn daemon (You can change if you want)
-Requires=djangoproject.socket
+Requires=portifolio.socket
 After=network.target
 
 [Service]
@@ -46,7 +46,7 @@ ExecStart=/home/pedro/app_repo/venv/bin/gunicorn \
           --capture-output \
           --access-logfile - \
           --workers 6 \
-          --bind unix:/run/djangoproject.socket \
+          --bind unix:/run/portifolio.socket \
           project.wsgi:application
 
 [Install]
@@ -54,22 +54,22 @@ WantedBy=multi-user.target
 
 ###############################################################################
 # Ativando
-sudo systemctl start djangoproject.socket
-sudo systemctl enable djangoproject.socket
+sudo systemctl start portifolio.socket
+sudo systemctl enable portifolio.socket
 
 # Checando
-sudo systemctl status djangoproject.socket
-curl --unix-socket /run/djangoproject.socket localhost
-sudo systemctl status djangoproject
+sudo systemctl status portifolio.socket
+curl --unix-socket /run/portifolio.socket localhost
+sudo systemctl status portifolio
 
 # Restarting
-sudo systemctl restart djangoproject.service
-sudo systemctl restart djangoproject.socket
-sudo systemctl restart djangoproject
+sudo systemctl restart portifolio.service
+sudo systemctl restart portifolio.socket
+sudo systemctl restart portifolio
 
 # After changing something
 sudo systemctl daemon-reload
 
 # Debugging
-sudo journalctl -u djangoproject.service
-sudo journalctl -u djangoproject.socket
+sudo journalctl -u portifolio.service
+sudo journalctl -u portifolio.socket
