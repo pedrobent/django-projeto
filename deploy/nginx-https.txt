@@ -32,10 +32,11 @@ server {
 
 # HTTPS
 server {
-  listen 443 ssl http2;
-  listen [::]:443 ssl http2;
+  listen 443 ssl; 
+  http2 on;
+  listen [::]:443 ssl;
 
-  server_name pedrobentodev.com.br;
+  server_name pedrobentodev.com.br www.pedrobentodev.com.br;
 
   ssl_certificate /etc/letsencrypt/live/pedrobentodev.com.br/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/pedrobentodev.com.br/privkey.pem;
@@ -70,13 +71,11 @@ server {
   
   # ATTENTION: /home/pedro/app_repo/static
   location /static {
-    autoindex on;
     alias /home/pedro/app_repo/static;
   }
 
   # ATTENTION: /home/pedro/app_repo/media 
   location /media {
-    autoindex on;
     alias /home/pedro/app_repo/media;
   }
 
