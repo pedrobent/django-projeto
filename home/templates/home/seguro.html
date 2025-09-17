@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector de Fraudes</title>
+    <link rel="stylesheet" href="{% static "global/css/style-seguro.css" %}">
+<body>
+    <div class="container">
+        <h1>Detector de Fraude em Sinistros</h1>
+        <p>Preencha os dados do sinistro para obter uma previsão o mais precisa possível.</p>
+        {% if erro %}
+                {{ erro }}
+            </div>
+        {% endif %}
+
+        <form action="/seguro" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="months_as_customer">Meses como Cliente:</label>
+                <input type="number" name="months_as_customer" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Idade do Segurado:</label>
+                <input type="number" name="age" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="total_claim_amount">Valor Total do Sinistro ($):</label>
+                <input type="number" step="0.01" name="total_claim_amount" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="witnesses">Nº de Testemunhas:</label>
+                <input type="number" name="witnesses" required>
+            </div>
+
+            <div class="form-group">
+                <label for="auto_make">Marca do Veículo:</label>
+                <select name="auto_make" required>
+                    <option value="Saab">Saab</option>
+                    <option value="Suburu">Subaru</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="auto_year">Ano do Veículo:</label>
+                <input type="number" name="auto_year" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="incident_severity">Gravidade do Incidente:</label>
+                <select name="incident_severity" required>
+                    <option value="Trivial Damage">Dano Trivial</option>
+                    <option value="Minor Damage">Dano Menor</option>
+                    <option value="Major Damage">Dano Grave</option>
+                    <option value="Total Loss">Perda Total</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="police_report_available">Boletim de Ocorrência?</label>
+                <select name="police_report_available" required>
+                    <option value="YES">Sim</option>
+                    <option value="NO">Não</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="full-width">Analisar Sinistro</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF--8">
+    <title>Análise de Risco de Crédito</title>
+    <link rel="stylesheet" href="{% static "global/css/style-credito.css" %}">
+</head>
+<body>
+    <h1>Análise de Risco de Crédito Completa</h1>
+    
+    <form action="/credito" method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="status_conta_corrente">Status da Conta Corrente</label>
+            <select id="status_conta_corrente" name="status_conta_corrente" required>
+                <option value="A11"> 0 Reais ou negativado</option>
+                <option value="A12">0 à 2000 Reais</option>
+                <option value="A13">mais de 2000 Reais ou assalariado</option>
+                <option value="A14">Nenhuma conta corrente</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="duracao_mes">Duração do crédito (meses)</label>
+            <input type="number" id="duracao_mes" name="duracao_mes" required>
+        </div>
+
+        <div class="form-group">
+            <label for="historico_credito">Histórico de Crédito</label>
+            <select id="historico_credito" name="historico_credito" required>
+                <option value="A30">Nenhum crédito / pago devidamente</option>
+                <option value="A31">Todos créditos neste banco pagos</option>
+                <option value="A32">Créditos existentes pagos até agora</option>
+                <option value="A33">Atraso no pagamento no passado</option>
+                <option value="A34">Conta crítica / outros créditos</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="proposito">Propósito</label>
+            <select id="proposito" name="proposito" required>
+                <option value="A40">Carro (novo)</option>
+                <option value="A41">Carro (usado)</option>
+                <option value="A42">Móveis/Equipamentos</option>
+                <option value="A43">Rádio/Televisão</option>
+                <option value="A44">Eletrodomésticos</option>
+                <option value="A45">Reparos</option>
+                <option value="A46">Educação</option>
+                <option value="A48">Treinamento</option>
+                <option value="A49">Negócios</option>
+                <option value="A410">Outros</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="valor_credito">Valor do Crédito</label>
+            <input type="number" id="valor_credito" name="valor_credito" required>
+        </div>
+
+        <div class="form-group">
+            <label for="poupanca">Quanto tem na poupança</label>
+            <select id="poupanca" name="poupanca" required>
+                <option value="A61">menos de 1000 Reais</option>
+                <option value="A62">1000 à 5000 Reais</option>
+                <option value="A63">5000 à 10000 Reais</option>
+                <option value="A64">10000 Reais ou mais</option>
+                <option value="A65">Desconhecido/sem poupança</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="emprego_atual">Tempo de Emprego Atual</label>
+            <select id="emprego_atual" name="emprego_atual" required>
+                <option value="A71">Desempregado</option>
+                <option value="A72">menos de 1 ano</option>
+                <option value="A73">1 à 4 anos</option>
+                <option value="A74">4 à 7 anos</option>
+                <option value="A75"> 7 anos ou mais</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="taxa_instalment">Taxa que o banco cobra (% da renda)</label>
+            <input type="number" id="taxa_instalment" name="taxa_instalment" min="1" max="4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="estado_civil_sexo">Estado Civil e Sexo</label>
+            <select id="estado_civil_sexo" name="estado_civil_sexo" required>
+                <option value="A91">Masculino: Divorciado/Separado</option>
+                <option value="A92">Feminino: Divorciado/Separado/Casado</option>
+                <option value="A93">Masculino: Solteiro</option>
+                <option value="A94">Masculino: Casado/Viúvo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="outros_devedores">Outros Devedores/Fiadores</label>
+            <select id="outros_devedores" name="outros_devedores" required>
+                <option value="A101">Nenhum</option>
+                <option value="A102">Co-requerente</option>
+                <option value="A103">Fiador</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="residencia_atual_desde">Reside no endereço atual desde (anos)</label>
+            <input type="number" id="residencia_atual_desde" name="residencia_atual_desde" min="1" max="75" required>
+        </div>
+
+        <div class="form-group">
+            <label for="propriedade">Propriedade</label>
+            <select id="propriedade" name="propriedade" required>
+                <option value="A121">Imóvel próprio</option>
+                <option value="A122">Poupança/seguro de vida</option>
+                <option value="A123">Carro ou outro</option>
+                <option value="A124">Sem propriedade</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" required>
+        </div>
+
+        <div class="form-group">
+            <label for="outros_planos_pagamento">Outros Planos de Pagamento</label>
+            <select id="outros_planos_pagamento" name="outros_planos_pagamento" required>
+                <option value="A141">Banco</option>
+                <option value="A142">Lojas</option>
+                <option value="A143">Nenhum</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="moradia">Moradia</label>
+            <select id="moradia" name="moradia" required>
+                <option value="A151">Aluguel</option>
+                <option value="A152">Própria</option>
+                <option value="A153">Grátis</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="n_creditos_existentes">Nº de Créditos neste Banco</label>
+            <input type="number" id="n_creditos_existentes" name="n_creditos_existentes" required>
+        </div>
+
+        <div class="form-group">
+            <label for="emprego">Tipo de Emprego</label>
+             <select id="emprego" name="emprego" required>
+                <option value="A171">informal</option>
+                <option value="A172">estagiario ou jovem aprendiz</option>
+                <option value="A173">carteira assinada</option>
+                <option value="A174">Gestão/Autônomo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="n_dependentes">Nº de Dependentes</label>
+            <input type="number" id="n_dependentes" name="n_dependentes" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Possui Telefone?</label>
+             <select id="telefone" name="telefone" required>
+                <option value="A191">Não</option>
+                <option value="A192">Sim</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="trabalhador_estrangeiro">Trabalhador Estrangeiro?</label>
+            <select id="trabalhador_estrangeiro" name="trabalhador_estrangeiro" required>
+                <option value="A201">Sim</option>
+                <option value="A202">Não</option>
+            </select>
+        </div>
+
+        <div class="form-group full-width">
+            <button type="submit">Fazer Previsão</button>
+        </div>
+    </form>
+
+    {% if resultado %}
+        <div class="resultado-container">
+            <h2>Resultado da Análise: {{ resultado }}</h2>
+            <a href="{% url 'home:credito' %}" class="btn-refazer">Refazer Análise</a>
+        </div>
+    {% endif %}
+
+</body>
+</html>

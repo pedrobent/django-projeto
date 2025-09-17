@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Resultado da Análise</title>
+    <link rel="stylesheet" href="{% static "global/css/style-seguro.css" %}">
+</head>
+<body>
+    <h1>Resultado da Análise de Fraude</h1>
+
+    <p class="resultado">
+        A probabilidade deste sinistro ser fraudulento é de: 
+        <strong>{{ probabilidade }}%</strong>
+    </p>
+
+    {% if probabilidade >= 50 %}
+        <div class="alerta alta">
+            <strong>Alerta:</strong> Alta probabilidade de fraude. Investigação fortemente recomendada.
+        </div>
+    {% elif probabilidade >= 25 %}
+        <div class="alerta media">
+            <strong>Atenção:</strong> Probabilidade moderada de fraude. Análise cuidadosa sugerida.
+        </div>
+    {% else %}
+        <div class="alerta baixa">
+            Baixa probabilidade de fraude.
+        </div>
+    {% endif %}
+
+    <br><br>
+    <a href="/seguro">← Analisar Outro Sinistro</a>
+</body>
+</html>
