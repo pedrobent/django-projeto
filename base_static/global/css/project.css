@@ -64,14 +64,17 @@
     opacity: 0;
 }
 
+
 .item-project .content-project{
     position: absolute;
+    background:rgba(255, 254, 254, 0.5);
+    border-radius: 10px;
     top: 50%;
     left: 100px;
     width: 300px;
     text-align: left;
-    text-shadow: 0 0 20px black;
-    color: white;
+    text-shadow: 0 10px 40px rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     transform: translate(0, -50%);
     display: none;
 }
